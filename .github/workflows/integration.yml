@@ -1,5 +1,4 @@
-
-name: Integration
+name: Intergration
 
 on:
   push:
@@ -19,17 +18,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: "Installing Dependencies"
+    - name: Installling dependencies
       run: npm i
 
-    - name: "Build command"
+    - name: 'Build Command'
       run: npm run build
 
-  unit-tests:
+  unit-test:
 
     runs-on: ubuntu-latest
 
@@ -40,12 +39,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: "Installing Dependencies"
+    - name: Installling dependencies
       run: npm i
 
-    - name: "Running test cases"
+    - name: 'Run test cases'
       run: npm run test
