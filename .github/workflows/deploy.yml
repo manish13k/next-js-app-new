@@ -10,6 +10,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - run: docker build -t manish13ksangwan/automatedeploy-nextjs .
+    - run: docker build -t manish13ksangwan/webapp-demo .
     - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
-    - run: docker push manish13ksangwan/automatedeploy-nextjs
+    - run: docker push manish13ksangwan/webapp-demo:04
